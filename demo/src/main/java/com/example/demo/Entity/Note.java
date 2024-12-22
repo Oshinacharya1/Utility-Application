@@ -2,11 +2,13 @@ package com.example.demo.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 
 @Entity
-@Data
+//@Getter @Setter
 @ToString
 public class Note {
     @Id
@@ -19,5 +21,27 @@ public class Note {
     @Column (name = "contents")
     private String contents;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
 }
